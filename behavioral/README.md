@@ -5,8 +5,9 @@ Behavioral design patterns are concerned with algorithms and the assignment of r
 ## Table of Contents
 
 1. [Chain of Responsibility](/behavioral/chain-of-responsibility/)
-2. [Observer](/behavioral/observer/)
-3. [Strategy](/behavioral/strategy/)
+2. [Iterator](/behavioral/iterator/)
+3. [Observer](/behavioral/observer/)
+4. [Strategy](/behavioral/strategy/)
 
 
 ---
@@ -16,9 +17,8 @@ Behavioral design patterns are concerned with algorithms and the assignment of r
 Describing and identifying design patterns takes time. That's the things that I plan to describe soon.
 
 1. [Command](https://refactoring.guru/design-patterns/command)
-2. [Iterator](https://refactoring.guru/design-patterns/iterator)
-3. [Mediator](https://refactoring.guru/design-patterns/mediator)
-4. [Memento](https://refactoring.guru/design-patterns/memento)
-5. [State](https://refactoring.guru/design-patterns/state)
-6. [Template Method](https://refactoring.guru/design-patterns/template-method)
-7. [Visitor](https://refactoring.guru/design-patterns/visitor)
+2. [Mediator](https://refactoring.guru/design-patterns/mediator)
+3. [Memento](https://refactoring.guru/design-patterns/memento)
+4. [State](https://refactoring.guru/design-patterns/state)
+5. [Template Method](https://refactoring.guru/design-patterns/template-method)
+6. [Visitor](https://refactoring.guru/design-patterns/visitor)
