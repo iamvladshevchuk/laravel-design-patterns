@@ -1,0 +1,6 @@
+# IDE
+.idea/
+
+# Claude Code agent infrastructure
+CLAUDE.md
+.claude/
