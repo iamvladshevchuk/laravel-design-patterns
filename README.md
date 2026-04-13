@@ -25,6 +25,7 @@ My goal is to list all the patterns from [the catalog](https://refactoring.guru/
     1. [Adapter](/structural/adapter/)
     2. [Bridge](/structural/bridge/)
     3. [Facade](/structural/facade/)
+    4. [Decorator](/structural/decorator/)
 
 ---
 
@@ -40,6 +41,5 @@ Describing and identifying design patterns takes time. That's the things that I 
     1. [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory)
 - [Structural](https://refactoring.guru/design-patterns/structural-patterns)
     1. [Composite](https://refactoring.guru/design-patterns/composite)
-    2. [Decorator](https://refactoring.guru/design-patterns/decorator)
-    3. [Flyweight](https://refactoring.guru/design-patterns/flyweight)
-    4. [Proxy](https://refactoring.guru/design-patterns/proxy)
+    2. [Flyweight](https://refactoring.guru/design-patterns/flyweight)
+    3. [Proxy](https://refactoring.guru/design-patterns/proxy)
