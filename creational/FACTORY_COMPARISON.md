@@ -90,7 +90,9 @@ public function newInstance($attributes = [], $exists = false)
 
 > The Factory Method  is a creational design pattern that provides an interface for creating objects but allows subclasses to alter the type of an object that will be created.
 
-*Work in progress.*
+Laravel's `Manager` abstract class defines the factory method dispatch mechanism: `createDriver()` translates a driver name into a `create{X}Driver()` call that each concrete subclass implements. `CacheManager`, `LogManager`, and `SessionManager` are all concrete creators that follow this convention.
+
+See the full documentation: [Factory Method](/creational/factory-method/)
 
 ## 6. Abstract Factory pattern
 
