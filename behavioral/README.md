@@ -10,6 +10,7 @@ Behavioral design patterns are concerned with algorithms and the assignment of r
 4. [Strategy](/behavioral/strategy/)
 5. [Command](/behavioral/command/)
 6. [Memento](/behavioral/memento/)
+7. [Template Method](/behavioral/template-method/)
 
 
 ---
@@ -20,5 +21,4 @@ Describing and identifying design patterns takes time. That's the things that I 
 
 1. [Mediator](https://refactoring.guru/design-patterns/mediator)
 2. [State](https://refactoring.guru/design-patterns/state)
-3. [Template Method](https://refactoring.guru/design-patterns/template-method)
-4. [Visitor](https://refactoring.guru/design-patterns/visitor)
+3. [Visitor](https://refactoring.guru/design-patterns/visitor)
