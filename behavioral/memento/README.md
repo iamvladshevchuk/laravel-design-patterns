@@ -5,13 +5,12 @@ Memento is a behavioral design pattern that lets you save and restore the previo
 ## Table of Contents
 
 1. [Eloquent Model Dirty Tracking](#1-eloquent-model-dirty-tracking)
-2. [Post-Save Snapshot Rollforward](#2-post-save-snapshot-rollforward)
 
 ## 1. Eloquent Model Dirty Tracking
 
 > File: [src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php](https://github.com/laravel/framework/blob/5cc435df7a99231b1504f100c9f55e44a08bd210/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php)
 
-Every Eloquent model acts as an **Originator** in the Memento pattern. When a model is loaded from the database, it captures a snapshot of its attribute values in the protected `$original` array — this array is the **Memento**. The model itself also acts as the **Caretaker**, holding onto that snapshot for the rest of the request lifecycle.
+Every Eloquent model implements a Memento-like snapshot mechanism through its `$original` array. The model acts as the **Originator** — it creates and restores from a snapshot of its own attribute values. The `$original` array is the **Memento** — an internal store of the last known persisted state. In the classical GoF formulation, the **Caretaker** is a *separate* entity that holds the Memento externally without examining its contents. Laravel's implementation collapses the Caretaker role into the model itself: `$original` is a private field that never leaves the model. This simplification trades the cross-boundary encapsulation guarantee for a more practical in-object checkpoint mechanism, but the core behavioral contract — snapshot at load, compare against current state, restore on demand — maps faithfully to what the Memento pattern accomplishes.
 
 ```php
 /**
@@ -41,7 +40,7 @@ public function newFromBuilder($attributes = [], $connection = null)
 }
 ```
 
-The second argument `true` passed to `setRawAttributes()` triggers `syncOriginal()` — the method that actually takes the snapshot:
+The second argument `true` passed to `setRawAttributes()` triggers `syncOriginal()` — the method that takes the snapshot:
 
 ```php
 public function setRawAttributes(array $attributes, $sync = false)
@@ -123,11 +122,9 @@ public function discardChanges()
 
 A developer can call `$user->discardChanges()` at any point before saving to roll back any in-memory mutations without touching the database, relying entirely on the stored memento.
 
-## 2. Post-Save Snapshot Rollforward
+The memento is not permanent — it advances whenever the model is successfully persisted. After every `save()`, Eloquent calls `finishSave()`, which invokes `syncOriginal()` to bring the stored snapshot up to date with the just-persisted state:
 
-> File: [src/Illuminate/Database/Eloquent/Model.php](https://github.com/laravel/framework/blob/5cc435df7a99231b1504f100c9f55e44a08bd210/src/Illuminate/Database/Eloquent/Model.php#L1091)
-
-The Memento is not permanent — it is updated whenever the model is successfully persisted. After every `save()`, Eloquent calls `finishSave()`, which invokes `syncOriginal()` to bring the stored snapshot up to date with the just-persisted state:
+> File: [src/Illuminate/Database/Eloquent/Model.php](https://github.com/laravel/framework/blob/5cc435df7a99231b1504f100c9f55e44a08bd210/src/Illuminate/Database/Eloquent/Model.php#L1090)
 
 ```php
 protected function finishSave(array $options)
@@ -142,6 +139,4 @@ protected function finishSave(array $options)
 }
 ```
 
-This rolling-forward behavior is important: after `save()` returns, `isDirty()` returns `false` because `$original` now matches `$attributes`. Any subsequent call to `discardChanges()` would restore to the post-save state, not the state from when the model was first loaded.
-
-This mirrors how a real-world undo history works — once you commit a change, the previous snapshot is discarded and the new state becomes the baseline.
+After `save()` returns, `isDirty()` returns `false` because `$original` now matches `$attributes`. Any subsequent call to `discardChanges()` would restore to the post-save state, not the state from when the model was first loaded. This mirrors a real-world undo history: once a change is committed, the snapshot advances and the previous baseline is gone.
