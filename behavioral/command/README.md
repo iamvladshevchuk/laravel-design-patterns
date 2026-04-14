@@ -110,6 +110,8 @@ trait Dispatchable
         return new PendingDispatch(new static(...$arguments));
     }
 
+    /* ... CODE ... */
+
     /**
      * Dispatch a command to its appropriate handler in the current process.
      *
@@ -121,6 +123,8 @@ trait Dispatchable
     {
         return app(Dispatcher::class)->dispatchSync(new static(...$arguments));
     }
+
+    /* ... CODE ... */
 }
 ```
 
