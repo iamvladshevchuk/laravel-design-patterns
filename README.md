@@ -24,6 +24,7 @@ My goal is to list all the patterns from [the catalog](https://refactoring.guru/
     2. [Prototype](/creational/prototype/)
     3. [Singleton](/creational/singleton/)
     4. [Factory Method](/creational/factory-method/)
+    5. [Abstract Factory](/creational/abstract-factory/)
 - [Structural](/structural/)
     1. [Adapter](/structural/adapter/)
     2. [Bridge](/structural/bridge/)
@@ -36,8 +37,6 @@ My goal is to list all the patterns from [the catalog](https://refactoring.guru/
 
 Describing and identifying design patterns takes time. That's the things that I plan to describe soon.
 
-- [Creational](https://refactoring.guru/design-patterns/creational-patterns)
-    1. [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory)
 - [Structural](https://refactoring.guru/design-patterns/structural-patterns)
     1. [Composite](https://refactoring.guru/design-patterns/composite)
     2. [Flyweight](https://refactoring.guru/design-patterns/flyweight)

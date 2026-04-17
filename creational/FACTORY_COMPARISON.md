@@ -98,4 +98,4 @@ See the full documentation: [Factory Method](/creational/factory-method/)
 
 > The Abstract Factory  is a creational design pattern that allows producing families of related or dependent objects without specifying their concrete classes.
 
-*Work in progress.*
+See the full documentation: [Abstract Factory](/creational/abstract-factory/).
