@@ -9,6 +9,7 @@ These patterns explain how to assemble objects and classes into larger structure
 3. [Facade](/structural/facade/)
 4. [Decorator](/structural/decorator/)
 5. [Composite](/structural/composite/)
+6. [Flyweight](/structural/flyweight/)
 
 ---
 
@@ -16,5 +17,4 @@ These patterns explain how to assemble objects and classes into larger structure
 
 Describing and identifying design patterns takes time. That's the things that I plan to describe soon.
 
-1. [Flyweight](https://refactoring.guru/design-patterns/flyweight)
-2. [Proxy](https://refactoring.guru/design-patterns/proxy)
+1. [Proxy](https://refactoring.guru/design-patterns/proxy)
