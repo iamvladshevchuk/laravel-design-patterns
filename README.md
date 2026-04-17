@@ -17,6 +17,7 @@ My goal is to list all the patterns from [the catalog](https://refactoring.guru/
     6. [Memento](/behavioral/memento/)
     7. [Template Method](/behavioral/template-method/)
     8. [Mediator](/behavioral/mediator/)
+    9. [State](/behavioral/state/)
 - [Creational](/creational/)
     1. [Builder](/creational/builder/)
     2. [Prototype](/creational/prototype/)
@@ -35,8 +36,7 @@ My goal is to list all the patterns from [the catalog](https://refactoring.guru/
 Describing and identifying design patterns takes time. That's the things that I plan to describe soon.
 
 - [Behavioral](https://refactoring.guru/design-patterns/behavioral-patterns)
-    1. [State](https://refactoring.guru/design-patterns/state)
-    2. [Visitor](https://refactoring.guru/design-patterns/visitor)
+    1. [Visitor](https://refactoring.guru/design-patterns/visitor)
 - [Creational](https://refactoring.guru/design-patterns/creational-patterns)
     1. [Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory)
 - [Structural](https://refactoring.guru/design-patterns/structural-patterns)
